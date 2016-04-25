@@ -88,7 +88,49 @@ app.controller('HomeController', ['$scope', function($scope) {
       likes:	812,
       dislikes:	101,
       posterindex: 0
-	}
+	},
+         { 
+      title:      'Movie 1', 
+      iscore:     9.3,
+      rating:     'R',
+      runtime:    142,
+      released:   new Date('1994', '10', '14'),
+      country:    'USA',
+      posters:    ['img/shawshank.jpg','img/shawshank2.jpg','img/shawshank3.jpg'],
+      imdb:       'http://www.imdb.com/title/tt0111161',
+      website:    'https://www.facebook.com/ShawshankRedemptionFilm',
+      likes:      1021,
+      dislikes:   122,
+      posterindex: 0
+      },
+         { 
+      title:      'Movie 2', 
+      iscore:     9.3,
+      rating:     'R',
+      runtime:    142,
+      released:   new Date('1994', '10', '14'),
+      country:    'USA',
+      posters:    ['img/shawshank.jpg','img/shawshank2.jpg','img/shawshank3.jpg'],
+      imdb:       'http://www.imdb.com/title/tt0111161',
+      website:    'https://www.facebook.com/ShawshankRedemptionFilm',
+      likes:      1021,
+      dislikes:   122,
+      posterindex: 0
+      },
+         { 
+      title:      'Movie 3', 
+      iscore:     9.3,
+      rating:     'R',
+      runtime:    142,
+      released:   new Date('1994', '10', '14'),
+      country:    'USA',
+      posters:    ['img/shawshank.jpg','img/shawshank2.jpg','img/shawshank3.jpg'],
+      imdb:       'http://www.imdb.com/title/tt0111161',
+      website:    'https://www.facebook.com/ShawshankRedemptionFilm',
+      likes:      1021,
+      dislikes:   122,
+      posterindex: 0
+      },
 	
 	
   ];
@@ -97,6 +139,10 @@ app.controller('HomeController', ['$scope', function($scope) {
 
 	
 	/* ADD VARIABLES FOR STEP 3 HERE */
+
+      $scope.title = "IMDB + Sidds Top 8 Movies";
+      $scope.owner = 'Sidd';
+      $scope.github = 'https://github.com/siddhuth/is219s16thir-p3';
 	
 	
 	
@@ -106,7 +152,26 @@ app.controller('HomeController', ['$scope', function($scope) {
 	
 	
 	/* ADD FUNCTIONS FOR STEP 7 HERE */
-		
+
+      $scope.likes = function(number){
+            $scope.likes += number;
+            
+      };
+	
+      $scope.dislikes = function(number){
+            $scope.likes -= number;
+            
+      };
+
+      $scope.posterClick = function(number){
+            $scope.posterindex += number;
+            
+      };
+
+      $scope.timeText = function(number){
+            $scope.minutes += number;
+            
+      };	
 	
 	
 	
