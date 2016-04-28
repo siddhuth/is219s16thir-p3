@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="IS219Gallery">
 <head>
 	<title>IS219 Gallery (Project 3)</title>
 	<!-- Our CSS File along with Boostrap Styles, and FontAwesome Styles-->
@@ -15,15 +15,17 @@
 	<!-- DO NOT CHANGE ANYTHING ABOVE THIS LINE-->
 
 	<!-- Angular (ADD HERE) -->
- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+ <script src="js/controllers/HomeController.js"></script>
+
 	
 </head>
 
-  <body ng-app="IS219Gallery">
+  <body ng-controller="HomeController">
 	  
-    <div  class="header">
+    <div class="header">
 	    
-      <div ng-controller="HomeController" class="container">
+      <div class="container">
         <h1 id="app_title">{{title}}</h1>
       </div>
       
@@ -32,20 +34,19 @@
       
       <div  class="container">
 
-        <div  class="col-md-6"> 
+        <div ng-controller="HomeController"  class="col-md-6"> 
             <div class="thumbnail">
 
-					<img class="poster ng-src = movie[0].posters[0]" />
-					<a ng-href=""><img ng-src="{{ movie[0].posters[0]}}"></a>	
+					<img src = {{movies[0].posters}} class = "poster" />	
 					<div class="imageInfo">{{movies[0].posterindex}}</div>
 					
-					<p class="title">{{movies[0].title (movies[0].country)}}</p> 
-					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> %iscore% </p>
+					<p class="title">{{movies[0].title | movies[0].country}}</p> 
+					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[0].iscore}} </p>
 					<p class="runtime">Runtime: {{movies[0].runtime}}</p> 
-					<p class="released">Released: {{movies[0].released | Rated: movies[0].released}}</p>
+					<p class="released">Released: {{movies[0].released | Rated: movies[0].rating}}</p>
 					<p class="websites">Websites: <a>{{movies[0].imdb}}</a> | <a>{{movies[0].website}}</a></p>
 					
-		            <div ng-controller="HomeController" class="social">
+		            <div class="social">
 		              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movies[0].like}}</p>
 		              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movies[0].dislike}}</p>
 		            </div>
@@ -55,88 +56,12 @@
       </div>
     </div>
 
-       <div ng-controller="HomeController" class="main">
-      
-      <div  class="container">
-
-        <div  class="col-md-6"> 
-            <div class="thumbnail">
-
-					<img class="poster" />
-					<div class="imageInfo">{{movies[1].posterindex}}</div>
-					
-					<p class="title">{{movies[1].title (movies[2].country)}}</p> 
-					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[1].score}} </p>
-					<p class="runtime">Runtime: {{movies[1].runtime}}</p> 
-					<p class="released">Released: {{movies[1].released | Rated: movies[1].released}}</p>
-					<p class="websites">Websites: <a>{{movies[1].imdb}}</a> | <a>{{movies[1].website}}</a></p>
-					
-		            <div ng-controller="HomeController" class="social">
-		              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movies[1].like}}</p>
-		              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movies[1].dislike}}</p>
-		            </div>
-            </div> 
-        </div>
-
-      </div>
-    </div>
-
-       <div ng-controller="HomeController" class="main">
-      
-      <div  class="container">
-
-        <div  class="col-md-6"> 
-            <div class="thumbnail">
-
-					<img class="poster" />
-					<div class="imageInfo">{{movies[2].posterindex}}</div>
-					
-					<p class="title">{{movies[2].title (movies[2].country)}}</p> 
-					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[2].iscore}} </p>
-					<p class="runtime">Runtime: {{movies[2].runtime}}</p> 
-					<p class="released">Released: {{movies[2].released | Rated: movies[2].released}}</p>
-					<p class="websites">Websites: <a>{{movies[2].imdb}}</a> | <a>{{movies[2].website}}</a></p>
-					
-		            <div ng-controller="HomeController" class="social">
-		              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movies[2].like}}</p>
-		              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movies[2].dislike}}</p>
-		            </div>
-            </div> 
-        </div>
-
-      </div>
-    </div>
-
-       <div ng-controller="HomeController" class="main">
-      
-      <div  class="container">
-
-        <div  class="col-md-6"> 
-            <div class="thumbnail">
-
-					<img class="poster" />
-					<div class="imageInfo">{{movies[3].posterindex}}</div>
-					
-					<p class="title">{{movies[3].title (movies[3].country)}}</p> 
-					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[3].iscore}} </p>
-					<p class="runtime">Runtime: {{movies[3].runtime}}</p> 
-					<p class="released">Released: {{movies[3].released | Rated: movies[3].released}}</p>
-					<p class="websites">Websites: <a>{{movies[3].imdb}}</a> | <a>{{movies[3].website}}</a></p>
-					
-		            <div ng-controller="HomeController" class="social">
-		              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movies[3].like}}</p>
-		              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movies[3].dislike}}</p>
-		            </div>
-            </div> 
-        </div>
-
-      </div>
-    </div>
+       
 
     <div ng-controller="HomeController" class="footer">
       <div class="container">
 		<a id="github" class="btn btn-lg btn-warning">
-			<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i> %owner% %github%
+			<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i> {{owner}} {{github}}
   		</a>
       </div>
     </div>
