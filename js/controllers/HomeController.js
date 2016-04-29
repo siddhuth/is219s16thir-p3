@@ -89,48 +89,48 @@ app.controller('HomeController', ['$scope', function($scope) {
       dislikes:	101,
       posterindex: 0
 	},
-         { 
+               { 
       title:      'inception', 
-      iscore:     9.3,
-      rating:     'R',
-      runtime:    142,
-      released:   new Date('1994', '10', '14'),
+      iscore:     8.8,
+      rating:     'PG-13',
+      runtime:    148,
+      released:   new Date('2010', '7', '16'),
       country:    'USA',
-      posters:    ['img/inception.jpg'],
-      imdb:       'http://www.imdb.com/title/tt0111161',
-      website:    'https://www.facebook.com/inception',
-      likes:      1021,
-      dislikes:   122,
+      posters:    ['img/inception.jpg','img/inception2.jpg'],
+      imdb:       'http://www.imdb.com/title/tt1375666/?ref_=nv_sr_1',
+      website:    'https://www.facebook.com/inception/?rf=130626696981851',
+      likes:      0,
+      dislikes:   0,
       posterindex: 0
       },
          { 
       title:      'epic', 
-      iscore:     9.3,
-      rating:     'R',
-      runtime:    142,
-      released:   new Date('1994', '10', '14'),
+      iscore:     6.7,
+      rating:     'PG',
+      runtime:    102,
+      released:   new Date('2013', '05', '24'),
       country:    'USA',
-      posters:    ['img/epic.jpg'],
-      imdb:       'http://www.imdb.com/title/tt0111161',
-      website:    'https://www.facebook.com/epic',
-      likes:      1021,
-      dislikes:   122,
+      posters:    ['img/epic.jpg','img/epic2.jpg'],
+      imdb:       'http://www.imdb.com/title/tt0848537/',
+      website:    'https://www.facebook.com/EpicTheMovie/',
+      likes:      0,
+      dislikes:   0,
       posterindex: 0
       },
          { 
       title:      'avengers', 
-      iscore:     9.3,
-      rating:     'R',
-      runtime:    142,
-      released:   new Date('1994', '10', '14'),
+      iscore:     7.5,
+      rating:     'PG-13',
+      runtime:    141,
+      released:   new Date('2015', '05', '01'),
       country:    'USA',
-      posters:    ['img/avengers.jpg'],
-      imdb:       'http://www.imdb.com/title/tt0111161',
-      website:    'https://www.facebook.com/avengers',
-      likes:      1021,
-      dislikes:   122,
+      posters:    ['img/avengers.jpg','img/avengerss2.jpg'],
+      imdb:       'http://www.imdb.com/title/tt2395427/?ref_=nv_sr_1',
+      website:    'https://www.facebook.com/avengers/',
+      likes:      0,
+      dislikes:   0,
       posterindex: 0
-      },
+      }
 	
 	
   ];
@@ -139,7 +139,7 @@ app.controller('HomeController', ['$scope', function($scope) {
 
 	
 	/* ADD VARIABLES FOR STEP 3 HERE */
-
+	
       $scope.title = "IMDB + Sidds Top 8 Movies";
       $scope.owner = 'Sidd';
       $scope.github = 'https://github.com/siddhuth/is219s16thir-p3';
@@ -150,30 +150,32 @@ app.controller('HomeController', ['$scope', function($scope) {
 	
 	
 	
-	
 	/* ADD FUNCTIONS FOR STEP 7 HERE */
 
-      $scope.likes = function(number){
-            $scope.likes += number;
-            
-      };
-	
-      $scope.dislikes = function(number){
-            $scope.likes -= number;
-            
-      };
+      $scope.likes = function(num){
+            $scope.movies[num].like++;
 
-      $scope.posterClick = function(number){
-            $scope.posterindex += number;
-            
-      };
+      }
 
-      $scope.timeText = function(number){
-            $scope.minutes += number;
-            
-      };	
+      $scope.dislikes = function(num){
+             $scope.movies[num].like--;
+
+
+      }
+
+      $scope.posterClick = function(num){
+      }
+
+      $scope.timeText = function(num){
+      }
+
+
+
+
+
+		
 	
-	
+
 	
 	
 	

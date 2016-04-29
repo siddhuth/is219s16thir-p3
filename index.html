@@ -2,6 +2,7 @@
 <html ng-app="IS219Gallery">
 <head>
 	<title>IS219 Gallery (Project 3)</title>
+
 	<!-- Our CSS File along with Boostrap Styles, and FontAwesome Styles-->
 	<link rel="stylesheet" type='text/css' href="css/style.css"/>
 	<link rel="stylesheet" type='text/css' href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -15,8 +16,7 @@
 	<!-- DO NOT CHANGE ANYTHING ABOVE THIS LINE-->
 
 	<!-- Angular (ADD HERE) -->
- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
- <script src="js/controllers/HomeController.js"></script>
+	   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 
 	
 </head>
@@ -29,26 +29,27 @@
         <h1 id="app_title">{{title}}</h1>
       </div>
       
+    </div>
 
-    <div ng-controller="HomeController" class="main">
+    <div class="main">
       
-      <div  class="container">
+      <div class="container">
 
-        <div ng-controller="HomeController"  class="col-md-6"> 
-            <div class="thumbnail">
+        <div class="col-md-8"> 
+            <div class="thumbnail" ng-repeat="movie in movies">
 
-					<img src = {{movies[0].posters}} class = "poster" />	
-					<div class="imageInfo">{{movies[0].posterindex}}</div>
+					<img class="poster" src="{{movie.posters[0]}}" />
+					<div class="imageInfo">{{posterindex}}</div>
 					
-					<p class="title">{{movies[0].title | movies[0].country}}</p> 
-					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[0].iscore}} </p>
-					<p class="runtime">Runtime: {{movies[0].runtime}}</p> 
-					<p class="released">Released: {{movies[0].released | Rated: movies[0].rating}}</p>
-					<p class="websites">Websites: <a>{{movies[0].imdb}}</a> | <a>{{movies[0].website}}</a></p>
+					<p class="title">{{movie.title}} ({{movie.country}})</p> 
+					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movie.iscore}} </p>
+					<p class="runtime">Runtime: {{movie.runtime}}</p> 
+					<p class="released">Released: {{movie.released }} | Rated: {{movie.rating}}</p>
+					<p class="websites">Websites:  <a ng-click = "{{movie.imdb}}" ng-href = "{{movie.imdb}}">IMDB</a> | <a ng-click = "{{movie.website}}" ng-href = "{{movie.website}}">WEBSITE</a></p>
 					
 		            <div class="social">
-		              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movies[0].like}}</p>
-		              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movies[0].dislike}}</p>
+		              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movie.like}}</p>
+		              <p class="dislikes" ng-click><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movie.dislike}}</p>
 		            </div>
             </div> 
         </div>
@@ -56,12 +57,10 @@
       </div>
     </div>
 
-       
-
-    <div ng-controller="HomeController" class="footer">
+    <div class="footer">
       <div class="container">
-		<a id="github" class="btn btn-lg btn-warning">
-			<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i> {{owner}} {{github}}
+		<a id="github" class="btn btn-lg btn-warning" target="_blank" ng-click= "{{owner}}"  ng-href= "{{github}}" >
+			<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{owner}}
   		</a>
       </div>
     </div>

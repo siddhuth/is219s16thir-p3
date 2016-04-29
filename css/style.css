@@ -25,14 +25,21 @@ body {
 
 /* This stylizes the poster area and poster images */
 .thumbnail {
+    width: 300px;
+    height: 630px;
     border: 0px;
     position: relative;
     padding: 50px;
     border-radius: 0;
     margin-bottom: 50px;
+    position: relative;
+    float: right;
+    padding: 5px 6px;
     
 }
 .thumbnail img {
+    width:250px;
+    height: 350px;
     margin-top: 10px;
     margin-bottom: 30px;
     padding: 5px;
@@ -66,6 +73,7 @@ body {
 /* This shapes your IMDB score area */
 .score {
     background-color: #39D1B4;
+    border-radius: 100px;
     color: #fff;
     font-size: 18px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -90,6 +98,7 @@ body {
     top: -20px;
 }
 
+/* This shapes your like and dislike buttons */
 /* This shapes your like and dislike buttons */
 
 .likes {
@@ -135,12 +144,12 @@ body {
 
 /* This makes sure your Github Button text is small */
 #github{
-	font-size: small;
+    font-size: small;
 }
 
 /* ADD YOUR LIKE AND DISLIKE HOVER/MOUSEOVER CSS CODE HERE */
 
-.likes{
+.likes:hover {
     cursor: pointer;
     display: inline-block;
     background-color: #008700;
@@ -157,7 +166,7 @@ body {
     transition: background 500ms;
 }
 
-.dislikes {
+.dislikes:hover {
     cursor: pointer;
     display: inline-block;
     background-color: #fdd6d6;
@@ -173,4 +182,8 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background 500ms;
 }
+
+
+
+
 
