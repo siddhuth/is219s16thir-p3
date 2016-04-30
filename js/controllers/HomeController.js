@@ -152,22 +152,32 @@ app.controller('HomeController', ['$scope', function($scope) {
 	
 	/* ADD FUNCTIONS FOR STEP 7 HERE */
 
-      $scope.likes = function(num){
+      $scope.like = function(num){
             $scope.movies[num].like++;
 
       }
 
-      $scope.dislikes = function(num){
-             $scope.movies[num].like--;
+      $scope.dislike = function(num){
+             $scope.movies[num].dislike--;
 
 
       }
 
+
       $scope.posterClick = function(num){
+
+
+
       }
 
       $scope.timeText = function(num){
-      }
+            return new movie.runtime.setseconds(num);
+
+      } 
+
+      
+
+
 
 
 
